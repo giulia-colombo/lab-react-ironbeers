@@ -11,6 +11,11 @@ function ListBeersPage() {
     const headerURL = "https://user-images.githubusercontent.com/23629340/40707029-cb2fce12-63ef-11e8-939c-f673ff3b965d.png"
     const apiURL = "https://ih-beers-api2.herokuapp.com/beers"
     const [beers, setBeers] = useState([]);
+    
+    const addNewBeer = (newBeer) => {
+        const updatedBeers = [...beers, newBeer];
+        setBeers(updatedBeers);
+    }
 
     useEffect(() => {
         axios.get(apiURL)
